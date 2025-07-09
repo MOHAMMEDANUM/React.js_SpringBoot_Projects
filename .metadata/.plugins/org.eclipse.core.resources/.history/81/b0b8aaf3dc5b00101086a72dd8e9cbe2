@@ -1,0 +1,5 @@
+package org.jsp.contact_form.service;
+
+public class ContactService {
+
+}

@@ -1,0 +1,28 @@
+package org.jsp.contact_form.dao;
+
+import java.util.List;
+
+import org.jsp.contact_form.entity.Contact;
+import org.jsp.contact_form.repository.ContactRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ContactDao {
+	
+	@Autowired
+	ContactRepository contactRepository ;
+
+	public Contact save(Contact data) {
+		return contactRepository.save(data);
+	}
+
+	public List<Contact> findAll() {
+		
+	}
+
+	public List<Contact> findAll() {
+		return contactRepository.findAll();
+	}
+	
+}

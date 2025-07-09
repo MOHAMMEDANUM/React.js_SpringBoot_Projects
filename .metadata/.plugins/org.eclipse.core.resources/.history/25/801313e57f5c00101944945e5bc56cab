@@ -1,0 +1,13 @@
+package org.jsp.contact_form.entity;
+
+import jakarta.persistence.Entity;
+import lombok.Data;
+
+@Data
+@Entity
+public class Contact {
+	private Long id;
+    private String fullName;
+    private String email;
+    private String subject;
+}

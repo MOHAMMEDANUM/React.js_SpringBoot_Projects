@@ -1,0 +1,5 @@
+package org.jsp.contact_form.entity;
+
+public class Contact {
+
+}

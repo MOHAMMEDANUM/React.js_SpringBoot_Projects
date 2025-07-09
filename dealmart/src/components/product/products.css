@@ -1,0 +1,36 @@
+* {
+  font-family: cursive;
+}
+.products {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 10vh;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.card {
+  width: 25vw;
+  height: 60vh;
+  background-color: #e4bebe;
+  border-radius: 2vh;
+  & p,
+  h5,
+  h4 {
+    text-align: center;
+  }
+  transition: transform 0.5s ease; /* add transition to base state */
+}
+
+.card img {
+  width: 25vw;
+  height: 30vh;
+  border-radius: 2vh 2vh 0 0;
+}
+
+.card:hover {
+  transform: scale(1.1); /* 1.3 is too zoomed, 1.1 looks smoother */
+}
