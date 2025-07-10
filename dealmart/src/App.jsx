@@ -2,26 +2,28 @@ import React from 'react'
 import Products from './components/product/products'
 import Home from './components/home/Home'
 import NavBar from './components/NavBar/NavBar'
-
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Admin from './components/Admin/Admin'
 
 function App() {
   return (
 
     <>
 
-
-    {/* <Products/> */}
-
-    {/* <Home /> */}
+    <BrowserRouter>
 
     <NavBar />
+    <Routes>
 
-    {/* <Router>
-      <Routes>
-        <Route path="F:\React+SpringBoot\dealmart\src\components\product\Products.jsx" element={<Products/>} />
-        <Route path="F:\React+SpringBoot\dealmart\src\components\home\Home.jsx" element={<Home />} />
-      </Routes>
-    </Router> */}
+    <Route path='/' element={<Home />}/>
+    <Route path='/product' element={<Products />}/>
+    <Route path='/admin' element={<Admin />}/>
+
+    </Routes>
+
+    </BrowserRouter>
+    
+
     
     
       

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import "./products.css"
+import Filter from '../Filter/Filter'
 
 function Products() {
 
     const [inputProducts,setInputProducts]=useState([])
+    const [flag , setFlag] = useState(true);
 
     let fetchData = async ()=>{
 
@@ -22,8 +24,15 @@ function Products() {
   return (
     <>
     
-        <h1>Products</h1>
-      <div className="products">
+        <h1 className='product-header'>Products</h1>
+
+
+        <Filter setFlag={setFlag}/>  
+
+
+
+      {
+        flag && (<div className="products">
         {inputProducts.map((prod, i) => {
           return (
             <div className="card" key={i}>
@@ -39,7 +48,10 @@ function Products() {
           );
         })}
 
-      </div>
+      </div>)
+      }
+
+
     
    
     

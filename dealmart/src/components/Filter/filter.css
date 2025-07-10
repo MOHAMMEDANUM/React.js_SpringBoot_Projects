@@ -1,0 +1,40 @@
+/* .sectioncategory{
+    display: block;
+    justify-content:center ;
+    margin-left: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.filterBtn{
+    margin-left: 20px;
+} */
+
+
+.sectioncategory {
+  position: absolute; /* or fixed depending on use */
+  top: 152px;
+  right: 120px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000; /* ensure it stays on top */
+}
+
+.category {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.filterBtn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filterBtn:hover {
+  background-color: #0056b3;
+}
