@@ -1,8 +1,10 @@
 import React from 'react'
 import "./navbar.css"
 import {Link} from "react-router-dom"
+import Search from '../Search/Search'
 
-function NavBar() {
+function NavBar({ setSearchDataDb, setSearchFlag }) {
+
   return (
     <>
     
@@ -12,6 +14,14 @@ function NavBar() {
         <div className='nav-logo'>
             <h1>DealMart</h1>
         </div>
+
+        <div>
+          <Search
+        setSearchDataDb={setSearchDataDb}
+        setSearchFlag={setSearchFlag}
+      />
+        </div>
+
         <div >
             <ul className="nav-sections">
               <li>

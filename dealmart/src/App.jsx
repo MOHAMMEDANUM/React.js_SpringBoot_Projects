@@ -1,22 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Products from './components/product/products'
 import Home from './components/home/Home'
 import NavBar from './components/NavBar/NavBar'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Admin from './components/Admin/Admin'
+import Search from './components/Search/Search'
 
 function App() {
+
+  const [searchDataDb, setSearchDataDb] = useState([]);
+  const [searchFlag, setSearchFlag] = useState(false);
+
+
   return (
 
     <>
 
     <BrowserRouter>
 
-    <NavBar />
+    <NavBar setSearchDataDb={setSearchDataDb} setSearchFlag={setSearchFlag}/>
     <Routes>
 
     <Route path='/' element={<Home />}/>
-    <Route path='/product' element={<Products />}/>
+    <Route path='/product' element={<Products searchDataDb={searchDataDb} searchFlag={searchFlag}/>}/>
     <Route path='/admin' element={<Admin />}/>
 
     </Routes>
