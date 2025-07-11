@@ -26,17 +26,13 @@ function Search(props) {
   }
 
   return (
-    <div className="search-container">
-      <form onSubmit={submitSearch}>
-        <input
-          className='search-input'
-          type="text"
-          placeholder='Search the product'
-          ref={searchData}
-        />
-        <button type='submit' className='submitBtn'>Submit</button>
-      </form>
-    </div>
+          <div className="search-container">
+            <form onSubmit={submitSearch}>
+              <input className='search-input' type="text" placeholder='Search the product' ref={searchData}/>
+              <button type='submit' className='submitBtn'>Submit</button>
+            </form>
+          </div>
+
   );
 }
 

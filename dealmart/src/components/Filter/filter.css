@@ -12,8 +12,8 @@
 
 .sectioncategory {
   position: absolute; /* or fixed depending on use */
-  top: 152px;
-  right: 120px;
+  top: 180px;
+  right: 4rem;
   display: flex;
   align-items: center;
   gap: 10px;

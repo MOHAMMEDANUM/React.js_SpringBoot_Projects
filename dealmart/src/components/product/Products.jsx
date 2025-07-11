@@ -1,82 +1,43 @@
-import React, { useEffect, useState } from 'react'
-import "./products.css"
-import Filter from '../Filter/Filter'
-import Search from '../Search/Search';
+import React, { useEffect, useState } from 'react';
+import './products.css';
+import Filter from '../Filter/Filter';
 
 function Products({ searchDataDb, searchFlag }) {
+  const [inputProducts, setInputProducts] = useState([]);
+  const [flag, setFlag] = useState(true);
 
-    const [inputProducts,setInputProducts]=useState([])
-    const [flag , setFlag] = useState(true);
+  useEffect(() => {
+    fetch("http://localhost:8080/product")
+      .then((res) => res.json())
+      .then((data) => setInputProducts(data));
+  }, []);
 
-    let fetchData = async ()=>{
-
-      let response = await fetch("http://localhost:8080/product")
-
-      let data = await response.json()
-
-    //   console.log(data);
-      setInputProducts(data)
-
-    }
-    useEffect(()=>{
-        fetchData()
-    },[])
+  const productsToShow = searchFlag ? searchDataDb : inputProducts;
 
   return (
-    <>
-    
-        <h1 className='product-header'>Products</h1>
+    <div className="product-page">
+      <h1 className="product-header">Explore Our Products</h1>
+      <Filter setFlag={setFlag} />
 
-
-        <Filter setFlag={setFlag}/>
-      {
-        flag && !searchFlag && (<div className="products">
-        {inputProducts.map((prod, i) => {
-          return (
-            <div className="card" key={i}>
-              <div className="image">
-                
-              <img src={prod.imageUrl} alt={prod.name} />
+      <div className="product-grid">
+        {productsToShow && productsToShow.length > 0 ? (
+          productsToShow.map((prod, i) => (
+            <div className="product-card" key={i}>
+              <img src={prod.imageUrl} alt={prod.name} className="product-img" />
+              <div className="product-details">
+                <h3>{prod.name}</h3>
+                <p className="price">₹{prod.price}</p>
+                <p className="category">Category: {prod.category}</p>
+                <p className="desc">{prod.description}</p>
               </div>
-              <h5>Name : {prod.name}</h5>
-              <h5>Price : {prod.price}</h5>
-              <p>Category : {prod.category}</p>
-              <p>Desc: {prod.description}</p>
             </div>
-          );
-        })}
-
-      </div>)
-      }
-
-      {/* Search Flag */}
-
-      {
-            searchFlag && (
-                <div className="products">
-                    {searchDataDb.map((prod, i) => {
-                    return (
-                        <div className="card" key={i}>
-                        <div className="image"><img src={prod.imageUrl} alt={prod.name} /></div>
-                        <h5>Name : {prod.name}</h5>
-                        <h5>Price : {prod.price}</h5>
-                        <p>Category : {prod.category}</p>
-                        <p>Desc: {prod.description}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-            )
-        }
-
-
-    
-   
-    
-    
-    </>
-    
-  )
+          ))
+        ) : (
+          <div className="no-products">No products found.</div>
+        )}
+      </div>
+    </div>
+  );
 }
 
-export default Products
+export default Products;

@@ -15,7 +15,7 @@ function NavBar({ setSearchDataDb, setSearchFlag }) {
             <h1>DealMart</h1>
         </div>
 
-        <div>
+        <div className="nav-search-wrapper">
           <Search
         setSearchDataDb={setSearchDataDb}
         setSearchFlag={setSearchFlag}
