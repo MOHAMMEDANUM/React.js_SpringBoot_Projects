@@ -1,23 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import './products.css';
+import "./products.css";
 import Filter from '../Filter/Filter';
 
 function Products({ searchDataDb, searchFlag }) {
-  const [inputProducts, setInputProducts] = useState([]);
-  const [flag, setFlag] = useState(true);
+  const [allProducts, setAllProducts] = useState([]);
+  const [displayProducts, setDisplayProducts] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:8080/product")
       .then((res) => res.json())
-      .then((data) => setInputProducts(data));
+      .then((data) => {
+        setAllProducts(data);
+        setDisplayProducts(data);
+      });
   }, []);
+  // Used when filter button is clicked
+  const handleFilterData = (filteredList) => {
+    setDisplayProducts(filteredList);
+  };
 
-  const productsToShow = searchFlag ? searchDataDb : inputProducts;
+  const productsToShow = searchFlag ? searchDataDb : displayProducts;
 
   return (
     <div className="product-page">
       <h1 className="product-header">Explore Our Products</h1>
-      <Filter setFlag={setFlag} />
+
+      <Filter onFilter={handleFilterData} />
 
       <div className="product-grid">
         {productsToShow && productsToShow.length > 0 ? (
