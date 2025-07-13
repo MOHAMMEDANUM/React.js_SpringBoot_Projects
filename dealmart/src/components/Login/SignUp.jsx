@@ -15,6 +15,7 @@ function SignUp() {
       email: emailRef.current.value,
       password: passwordRef.current.value,
     };
+    
 
     console.log("Signup Data:", user);
 
