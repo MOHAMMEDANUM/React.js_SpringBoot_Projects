@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./navbar.css"
 import {Link} from "react-router-dom"
 import Search from '../Search/Search'
 
-function NavBar({ setSearchDataDb, setSearchFlag }) {
+function NavBar({ setSearchDataDb, setSearchFlag ,flagAdminLogin}) {
+
+ 
 
   return (
     <>
@@ -33,9 +35,15 @@ function NavBar({ setSearchDataDb, setSearchFlag }) {
               <li>
                 <Link to="/signin">LOGIN</Link>
               </li>
-              <li>
-                <Link to="/admin">ADMIN</Link>
-              </li>
+
+              {
+                flagAdminLogin && <li>
+                    <Link to="/admin">ADMIN</Link>
+                  </li>
+              }
+
+                  
+
 
             </ul>
         </div>

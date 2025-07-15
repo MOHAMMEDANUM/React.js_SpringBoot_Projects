@@ -12,6 +12,8 @@ function App() {
   const [searchDataDb, setSearchDataDb] = useState([]);
   const [searchFlag, setSearchFlag] = useState(false);
 
+   let [flagAdminLogin,setFlagAdminLogin]=useState(false)
+
 
   return (
 
@@ -19,12 +21,12 @@ function App() {
 
     <BrowserRouter>
 
-    <NavBar setSearchDataDb={setSearchDataDb} setSearchFlag={setSearchFlag}/>
+    <NavBar setSearchDataDb={setSearchDataDb} setSearchFlag={setSearchFlag} flagAdminLogin={flagAdminLogin}/>
     <Routes>
 
     <Route path='/' element={<Home />}/>
     <Route path='/product' element={<Products searchDataDb={searchDataDb} searchFlag={searchFlag}/>}/>
-    <Route path='/signin' element={<SignIn />}/>
+    <Route path='/signin' element={<SignIn setFlagAdminLogin={setFlagAdminLogin} />}/>
     <Route path='/signup' element={<SignUp />}/>
 
     <Route path='/admin' element={<Admin />}/>
