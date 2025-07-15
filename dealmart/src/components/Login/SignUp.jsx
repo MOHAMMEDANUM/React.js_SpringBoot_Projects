@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./signup.css";
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,7 @@ function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const handleSignUp = (e) => {
+   const handleSignUp=((e)=>{
     e.preventDefault();
 
     const user = {
@@ -15,9 +15,16 @@ function SignUp() {
       email: emailRef.current.value,
       password: passwordRef.current.value,
     };
-    
 
     console.log("Signup Data:", user);
+
+      fetch("http://localhost:8080/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),})
+ 
 
     // Here you can POST this data to your backend API
 
@@ -25,7 +32,7 @@ function SignUp() {
     nameRef.current.value = "";
     emailRef.current.value = "";
     passwordRef.current.value = "";
-  };
+  });
 
   return (
     <div className="signup-container">
