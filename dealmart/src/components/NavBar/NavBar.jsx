@@ -33,6 +33,9 @@ function NavBar({ setSearchDataDb, setSearchFlag ,flagAdminLogin}) {
                 <Link to="/product">PRODUCT</Link>
               </li>
               <li>
+                <Link to="/contact">CONTACT</Link>
+              </li>
+              <li>
                 <Link to="/signin">LOGIN</Link>
               </li>
 
