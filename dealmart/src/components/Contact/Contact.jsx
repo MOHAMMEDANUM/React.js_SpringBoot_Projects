@@ -19,8 +19,8 @@ function Contact() {
         <div className="contact-info">
           <h3>Contact Information</h3>
           <p><strong>Address:</strong> Rashad Nagar, Govindpura, Bangalore, Karnataka 560045</p>
-          <p><strong>Email:</strong> support@dealmart.com</p>
-          <p><strong>Phone:</strong> +91 98765 43210</p>
+          <div className='email-phone'><p><strong>Email:</strong> support@dealmart.com</p>
+          <p><strong>Phone:</strong> +91 98765 43210</p></div>
           <iframe
             title="map"
             className="contact-map"
