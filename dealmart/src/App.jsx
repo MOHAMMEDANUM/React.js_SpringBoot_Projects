@@ -7,6 +7,7 @@ import Admin from './components/Admin/Admin'
 import SignIn from './components/Login/SignIn'
 import SignUp from './components/Login/SignUp'
 import Contact from './components/Contact/Contact'
+import AboutUs from './components/About/AboutUs'
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
     <Route path='/' element={<Home />}/>
     <Route path='/product' element={<Products searchDataDb={searchDataDb} searchFlag={searchFlag}/>}/>
     <Route path='/contact' element={<Contact />} />
+    <Route path="/about" element={<AboutUs />} />
+
     <Route path='/signin' element={<SignIn setFlagAdminLogin={setFlagAdminLogin} />}/>
     <Route path='/signup' element={<SignUp />}/>
 
