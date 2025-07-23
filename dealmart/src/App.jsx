@@ -8,6 +8,7 @@ import SignIn from './components/Login/SignIn'
 import SignUp from './components/Login/SignUp'
 import Contact from './components/Contact/Contact'
 import AboutUs from './components/About/AboutUs'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -37,6 +38,8 @@ function App() {
     <Route path='/admin' element={<Admin />}/>
 
     </Routes>
+
+    <Footer />
 
     </BrowserRouter>
     
