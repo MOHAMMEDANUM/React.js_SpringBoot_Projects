@@ -9,8 +9,6 @@ function NavBar({ setSearchDataDb, setSearchFlag ,flagAdminLogin}) {
 
   return (
     <>
-    
-
     <div className="nav-container">
 
         <div className='nav-logo'>

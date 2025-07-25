@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
     const signInpassword = passwordRef.current.value;
 
     // You can connect this with backend auth API
-    console.log("Login Attempt:", { email, password });
+    console.log("Login Attempt:", { signInemail, signInpassword });
 
       let res
       let fetchSignUpData = await fetch("http://localhost:8080/login")

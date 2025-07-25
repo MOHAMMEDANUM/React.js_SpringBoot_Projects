@@ -24,7 +24,7 @@ function Filter({ onFilter }) {
         <option value="">All Categories</option>
         <option value="mobile">MOBILE</option>
         <option value="laptop">LAPTOP</option>
-        <option value="cloth">CLOTH</option>
+        {/* <option value="cloth">CLOTH</option> */}
         <option value="shoe">SHOE</option>
         <option value="watch">WATCH</option>
       </select>
