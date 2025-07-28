@@ -9,6 +9,7 @@ import SignUp from './components/Login/SignUp'
 import Contact from './components/Contact/Contact'
 import AboutUs from './components/About/AboutUs'
 import Footer from './components/Footer/Footer'
+import ForgetPassword from './components/Login/ForgetPassword'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
 
     <Route path='/signin' element={<SignIn setFlagAdminLogin={setFlagAdminLogin} />}/>
     <Route path='/signup' element={<SignUp />}/>
+    <Route path='/forgot-password' element={<ForgetPassword />}/>
 
     <Route path='/admin' element={<Admin />}/>
 

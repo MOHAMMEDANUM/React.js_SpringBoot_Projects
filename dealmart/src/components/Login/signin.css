@@ -71,3 +71,16 @@
   color: #ff6600;
   text-decoration: none;
 }
+.forgot-password {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ff6600;
+  text-decoration: none;
+  
+}
+.forgot-password a{
+  color: #ff6600;
+   font-size: 1rem;
+  text-decoration: none;
+}

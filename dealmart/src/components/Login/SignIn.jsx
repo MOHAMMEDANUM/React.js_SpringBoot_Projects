@@ -53,6 +53,10 @@ import { Link } from "react-router-dom";
 
         <button type="submit" className="login-btn">Login</button>
 
+        <p className="forgot-password">
+          <Link to="/forgot-password" >Forgot Password?</Link>
+        </p>
+
         <p className="signup-redirect">
           Don't have an account? <Link to="/signup">Register here</Link>
         </p>
