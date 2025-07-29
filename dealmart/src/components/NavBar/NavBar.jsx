@@ -40,6 +40,10 @@ function NavBar({ setSearchDataDb, setSearchFlag ,flagAdminLogin}) {
                 <Link to="/signin">LOGIN</Link>
               </li>
 
+              <li>
+                <Link to="/logout">LOGOUT</Link>
+              </li>
+
               {
                 flagAdminLogin && <li>
                     <Link to="/admin">ADMIN</Link>

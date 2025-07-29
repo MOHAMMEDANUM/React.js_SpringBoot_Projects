@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact'
 import AboutUs from './components/About/AboutUs'
 import Footer from './components/Footer/Footer'
 import ForgetPassword from './components/Login/ForgetPassword'
+import Logout from './components/Login/Logout'
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
     <Route path='/signin' element={<SignIn setFlagAdminLogin={setFlagAdminLogin} />}/>
     <Route path='/signup' element={<SignUp />}/>
     <Route path='/forgot-password' element={<ForgetPassword />}/>
+    <Route path='/logout' element={<Logout />}/>
 
     <Route path='/admin' element={<Admin />}/>
 
