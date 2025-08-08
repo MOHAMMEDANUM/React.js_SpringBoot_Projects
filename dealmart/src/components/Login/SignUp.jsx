@@ -6,6 +6,7 @@ function SignUp() {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
 
    const handleSignUp=((e)=>{
     e.preventDefault();
@@ -18,7 +19,7 @@ function SignUp() {
 
     console.log("Signup Data:", user);
 
-      fetch(`${process.env.REACT_APP_BASE_URL}/login`, {
+      fetch(`${baseURL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -3,15 +3,16 @@ import './filter.css';
 
 function Filter({ onFilter }) {
   const categoryData = useRef();
+  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
 
   async function handle() {
     const selectedCategory = categoryData.current.value;
     
     let res;
     if (selectedCategory === "") {
-      res = await fetch(`${process.env.REACT_APP_BASE_URL}/product`);
+      res = await fetch(`${baseURL}/product`);
     } else {
-      res = await fetch(`${process.env.REACT_APP_BASE_URL}/product/${selectedCategory}`);
+      res = await fetch(`${baseURL}/product/${selectedCategory}`);
     }
 
     const data = await res.json();

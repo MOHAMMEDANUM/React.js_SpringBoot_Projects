@@ -50,6 +50,7 @@ function Search(props) {
   const searchData = useRef();
   const navigate = useNavigate();
   const [suggestions, setSuggestions] = useState([]);
+  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
 
   async function fetchSuggestions(query) {
     if (query.trim() === "") {
@@ -57,7 +58,7 @@ function Search(props) {
       return;
     }
 
-    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/product/name/${query}`);
+    const res = await fetch(`${baseURL}/product/name/${query}`);
     const data = await res.json();
     setSuggestions(data);
   }
@@ -72,7 +73,7 @@ function Search(props) {
       return;
     }
 
-    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/product/name/${inputValue}`);
+    const response = await fetch(`${baseURL}/product/name/${inputValue}`);
     const datas = await response.json();
 
     props.setSearchDataDb(datas);

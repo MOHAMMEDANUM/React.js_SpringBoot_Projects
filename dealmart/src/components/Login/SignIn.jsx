@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
  function SignIn(props) {
   const emailRef = useRef();
   const passwordRef = useRef();
+  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ import { Link } from "react-router-dom";
     console.log("Login Attempt:", { signInemail, signInpassword });
 
       let res
-      let fetchSignUpData = await fetch(`${process.env.REACT_APP_BASE_URL}/login`)
+      let fetchSignUpData = await fetch(`${baseURL}/login`)
       res = await fetchSignUpData.json()
 
       console.log(res[0].email);
