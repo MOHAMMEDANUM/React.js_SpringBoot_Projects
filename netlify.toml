@@ -1,0 +1,4 @@
+[build]
+  base = "dealmart"
+  publish = "dist"
+  command = "npm run build"
