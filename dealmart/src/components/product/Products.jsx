@@ -7,7 +7,7 @@ function Products({ searchDataDb, searchFlag }) {
   const [displayProducts, setDisplayProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/product")
+    fetch(`${process.env.REACT_APP_BASE_URL}/product`)
       .then((res) => res.json())
       .then((data) => {
         setAllProducts(data);

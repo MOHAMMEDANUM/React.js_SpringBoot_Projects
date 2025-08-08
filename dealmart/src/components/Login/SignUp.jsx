@@ -18,7 +18,7 @@ function SignUp() {
 
     console.log("Signup Data:", user);
 
-      fetch("http://localhost:8080/login", {
+      fetch(`${process.env.REACT_APP_BASE_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

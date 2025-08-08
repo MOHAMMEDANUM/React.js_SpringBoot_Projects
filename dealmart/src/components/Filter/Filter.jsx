@@ -9,9 +9,9 @@ function Filter({ onFilter }) {
     
     let res;
     if (selectedCategory === "") {
-      res = await fetch("http://localhost:8080/product");
+      res = await fetch(`${process.env.REACT_APP_BASE_URL}/product`);
     } else {
-      res = await fetch(`http://localhost:8080/product/${selectedCategory}`);
+      res = await fetch(`${process.env.REACT_APP_BASE_URL}/product/${selectedCategory}`);
     }
 
     const data = await res.json();

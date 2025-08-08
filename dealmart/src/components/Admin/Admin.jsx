@@ -21,7 +21,7 @@ function Admin() {
       return;
     }
 
-    fetch("http://localhost:8080/product", {
+    fetch(`${process.env.REACT_APP_BASE_URL}/product`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

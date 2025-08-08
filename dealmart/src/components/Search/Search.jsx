@@ -57,7 +57,7 @@ function Search(props) {
       return;
     }
 
-    const res = await fetch(`http://localhost:8080/product/name/${query}`);
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/product/name/${query}`);
     const data = await res.json();
     setSuggestions(data);
   }
@@ -72,7 +72,7 @@ function Search(props) {
       return;
     }
 
-    const response = await fetch(`http://localhost:8080/product/name/${inputValue}`);
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/product/name/${inputValue}`);
     const datas = await response.json();
 
     props.setSearchDataDb(datas);

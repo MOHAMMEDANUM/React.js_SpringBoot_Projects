@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
     console.log("Login Attempt:", { signInemail, signInpassword });
 
       let res
-      let fetchSignUpData = await fetch("http://localhost:8080/login")
+      let fetchSignUpData = await fetch(`${process.env.REACT_APP_BASE_URL}/login`)
       res = await fetchSignUpData.json()
 
       console.log(res[0].email);
