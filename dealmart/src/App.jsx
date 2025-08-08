@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import Products from './components/product/products'
+
+import Products from './components/product/Products'
 import Home from './components/home/Home'
 import NavBar from './components/NavBar/NavBar'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
