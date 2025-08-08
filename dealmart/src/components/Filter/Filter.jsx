@@ -3,7 +3,8 @@ import './filter.css';
 
 function Filter({ onFilter }) {
   const categoryData = useRef();
-  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
+  const baseURL = import.meta.env.VITE_BASE_URL;
+
 
   async function handle() {
     const selectedCategory = categoryData.current.value;

@@ -5,7 +5,8 @@ import Filter from '../Filter/Filter';
 function Products({ searchDataDb, searchFlag }) {
   const [allProducts, setAllProducts] = useState([]);
   const [displayProducts, setDisplayProducts] = useState([]);
-  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
+  const baseURL = import.meta.env.VITE_BASE_URL;
+
 
   useEffect(() => {
     fetch(`${baseURL}/product`)

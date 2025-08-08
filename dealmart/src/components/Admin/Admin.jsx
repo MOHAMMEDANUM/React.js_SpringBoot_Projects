@@ -3,7 +3,8 @@ import "./admin.css";
 
 function Admin() {
   const formData = useRef();
-  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
+  const baseURL = import.meta.env.VITE_BASE_URL;
+
 
   function handleSubmit(e) {
     e.preventDefault();

@@ -6,7 +6,8 @@ function SignUp() {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
+  const baseURL = import.meta.env.VITE_BASE_URL;
+
 
    const handleSignUp=((e)=>{
     e.preventDefault();

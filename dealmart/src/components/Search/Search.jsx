@@ -50,7 +50,7 @@ function Search(props) {
   const searchData = useRef();
   const navigate = useNavigate();
   const [suggestions, setSuggestions] = useState([]);
-  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
+ const baseURL = import.meta.env.VITE_BASE_URL;
 
   async function fetchSuggestions(query) {
     if (query.trim() === "") {
