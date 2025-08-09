@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import "./signin.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
  function SignIn(props) {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const baseURL = import.meta.env.VITE_BASE_URL;
+   const emailRef = useRef();
+   const passwordRef = useRef();
+   const baseURL = import.meta.env.VITE_BASE_URL;
+   const navigate = useNavigate();
 
 
   const handleLogin = async (e) => {
@@ -29,7 +31,7 @@ import { Link } from "react-router-dom";
 
       if(signupEmail===signInemail && signupPassword===signInpassword){
         console.log("Login successfully Beta");
-        window.location.href="/admin"
+        navigate('/admin');
         props.setFlagAdminLogin(true)
       }
       else{
