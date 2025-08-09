@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
       let res
       let fetchSignUpData = await fetch(`${baseURL}/login`)
       res = await fetchSignUpData.json()
+      
 
       console.log(res[0].email);
       console.log(res[0].password);
@@ -33,7 +34,7 @@ import { Link } from "react-router-dom";
         props.setFlagAdminLogin(true)
       }
       else{
-        console.log("Nalla Error");
+        console.log("Invalid Email or Password");
       }
       
     // Clear fields
