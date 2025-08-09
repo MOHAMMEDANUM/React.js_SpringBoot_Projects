@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
       let res
       let fetchSignUpData = await fetch(`${baseURL}/login`)
       res = await fetchSignUpData.json()
-      
+
 
       console.log(res[0].email);
       console.log(res[0].password);
@@ -30,7 +30,7 @@ import { Link } from "react-router-dom";
 
       if(signupEmail===signInemail && signupPassword===signInpassword){
         console.log("Login successfully Beta");
-        window.location.href="Admin"
+        window.location.href="admin"
         props.setFlagAdminLogin(true)
       }
       else{
