@@ -1,5 +1,7 @@
 import React from 'react';
 import './footer.css';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 function Footer() {
   return (
@@ -40,12 +42,12 @@ function Footer() {
         <div className="footer-section support">
           <h3>Help & Support</h3>
           <ul>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Return Policy</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-          </ul>
+          <li><HashLink to="/helpsupport#faqs">FAQs</HashLink></li>
+          <li><HashLink to="/helpsupport#return-policy">Return Policy</HashLink></li>
+          <li><HashLink to="/helpsupport#shipping-info">Shipping Info</HashLink></li>
+          <li><HashLink to="/helpsupport#privacy-policy">Privacy Policy</HashLink></li>
+          <li><HashLink to="/helpsupport#terms-conditions">Terms & Conditions</HashLink></li>
+        </ul>
         </div>
 
       </div>

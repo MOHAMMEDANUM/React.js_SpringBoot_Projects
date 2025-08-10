@@ -12,6 +12,7 @@ import AboutUs from './components/About/AboutUs'
 import Footer from './components/Footer/Footer'
 import ForgetPassword from './components/Login/ForgetPassword'
 import Logout from './components/Login/Logout'
+import HelpSupport from './components/HelpSupport/HelpSupport'
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
     <Route path='/product' element={<Products searchDataDb={searchDataDb} searchFlag={searchFlag}/>}/>
     <Route path='/contact' element={<Contact />} />
     <Route path="/about" element={<AboutUs />} />
+    <Route path="/helpsupport" element={<HelpSupport />} />
+    
 
     <Route path='/signin' element={<SignIn setFlagAdminLogin={setFlagAdminLogin} />}/>
     <Route path='/signup' element={<SignUp />}/>
